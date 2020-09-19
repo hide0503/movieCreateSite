@@ -108,7 +108,7 @@ section {
 }
 
 body {
-    line-height: 1;
+    line-height: 1.6;
 }
 
 ol,
@@ -134,8 +134,8 @@ table {
     border-spacing: 0;
 }
 
-/* ここから下が本文　*/
 
+/*---------------------ここから下が本文------------------------　*/
 /*全体にかけるスタイル*/
 a {
     text-decoration: none;
@@ -177,8 +177,81 @@ nav {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-    font-family:'TimeBurner';
+    font-family: 'TimeBurner';
 
 }
 
-/*main*/
+/*メインビジュアル*/
+.main-visual {
+    height: 100vh;
+    background: url(../images/main_visual.jpg) no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*メインコンテンツ*/
+.section-inner {
+    padding: 90px 10px 110px;
+
+}
+
+.section-inner h2 {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'TimeBurner';
+    margin-bottom: 30px;
+    font-weight: bold;
+
+}
+
+.vision p {
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+/*Service*/
+.service {
+    background: url(../images/bg_service.jpg);
+    background-size: 100%;
+}
+
+.section_title {
+    color: #fff;
+}
+
+.section-inner {
+    padding: 45px 10px 30px;
+}
+
+/*card-desig*/
+.card-warp {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    max-width: 1020px;
+    margin: 0 auto;
+} 
+.card{
+    width:calc(33.3% - 20px);
+    background: #fff;
+}
+.card figure{
+position: relative;
+
+}
+.card figcaption{
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;    
+
+}
+.card-text{
+    padding: 10px 15px;
+}
