@@ -136,6 +136,8 @@ table {
 
 
 /*---------------------ここから下が本文------------------------　*/
+
+
 /*全体にかけるスタイル*/
 a {
     text-decoration: none;
@@ -149,6 +151,16 @@ a {
 
 li {
     list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+/* btn-header */
+.btn-menu {
+    display: none;
 }
 
 /*header*/
@@ -182,15 +194,17 @@ nav {
 }
 
 /*メインビジュアル*/
-.main-visual{
+.main-visual {
     overflow: hidden;
 
 }
-.main-visual video{
+
+.main-visual video {
     min-width: 100%;
     min-height: 100vh;
 }
-.main-visual h1{
+
+.main-visual h1 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -200,6 +214,7 @@ nav {
     width: 100%;
     height: 70px;
 }
+
 /* メインビジュアルが画像だった時のCSS */
 /* .main-visual {
     height: 100vh;
@@ -214,8 +229,9 @@ nav {
 /*メインコンテンツ*/
 .section-inner {
     padding: 90px 10px 200px;
-    
+
 }
+
 .section-inner h2 {
     font-size: 60px;
     text-align: center;
@@ -224,6 +240,7 @@ nav {
     font-weight: bold;
 
 }
+
 .vision p {
     margin-bottom: 30px;
     font-size: 20px;
@@ -236,13 +253,16 @@ nav {
     background: url(../images/bg_service.jpg);
     background-size: 100%;
 }
-.service h2{
+
+.service h2 {
     color: #fff;
 
 }
-.service .section-inner{
-    padding: 45px 10px 30px; 
+
+.service .section-inner {
+    padding: 45px 10px 30px;
 }
+
 /*card-desig*/
 .card-warp {
     display: flex;
@@ -277,11 +297,17 @@ nav {
 }
 
 
+
+
+
+
+
 /*news*/
-.list-news{
+.list-news {
     max-width: 900px;
     margin: 0 auto;
 }
+
 .list-news>li {
     padding: 25px 10px;
     display: flex;
@@ -350,15 +376,17 @@ nav {
 
 
 /* Recruit */
-.recruit .section-inner{
+.recruit .section-inner {
     padding: 90px 10px 200px;
 }
+
 /* recruit-wrap */
 .recruit-wrap {
     margin: 0 atuo;
     max-width: 1200px;
     position: relative;
 }
+
 .recruit-wrap::before {
     content: "";
     display: block;
@@ -370,6 +398,7 @@ nav {
     right: 0;
 
 }
+
 .recruit-wrap::after {
     content: "";
     display: block;
@@ -382,6 +411,7 @@ nav {
     top: 230px;
 
 }
+
 .recruit-wrap h3 {
     font-size: 22px;
     font-weight: bold;
@@ -401,10 +431,12 @@ nav {
     margin-bottom: 40px;
 
 }
+
 .list-recruit {
     margin-bottom: 50px;
 
 }
+
 .list-recruit>li {
     margin-bottom: 10px;
 
@@ -428,4 +460,192 @@ footer {
 
 footer small {
     color: #fff;
+
+}
+
+/* メディアクエリ */
+@media screen and (max-width:768px) {
+    nav {
+        height: 100vh;
+
+    }
+
+    .nav-main {
+        flex-direction: column;
+        height: 100%;
+
+    }
+
+    .nav-main>li {
+        text-align: center;
+        padding: 20px 0;
+
+    }
+
+    .nav-main>li+li {
+        margin-left: 0;
+
+    }
+
+    /* btn */
+    .btn-menu {
+         display: block; /*button要素は元々インライン要素なのでblock要素に変更 */
+        position: fixed; /*fixedでスクロールしても動かないように設定*/
+        z-index: 2; /*重ねを上に*/
+        top: 5px; /*位置調整*/
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+
+    }
+
+    .btn-menu-lines {
+        position: absolute; /*fixedを基準に絶対位置への配置*/
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 20px;/*ラインの長さ指定*/
+        height: 2px; /*ラインの太さを指定*/
+        margin: auto; /*左右中央揃え*/
+        background: #fff;
+        -webkit-transition: .3s; /*変化量を指定*//*アニメーション前のプロパティに指定すること*/
+        transition: .3s;
+
+    }
+
+    .btn-menu-lines::before,
+    .btn-menu-lines::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        content: "";
+        -webkit-transition: .3s;
+        transition: .3s;
+        -webkit-transform-origin: 2.87514px center;
+        -ms-transform-origin: 2.87514px center;
+        transform-origin: 2.87514px center;
+
+    }
+
+    .btn-menu-lines::before {
+        top: 6px;
+
+    }
+
+    .btn-menu-lines::after {
+        top: -6px;
+    }
+
+    .btn-menu .is-animate .btn-menu-lines {
+        background: none;
+
+    }
+
+    .btn-menu .is-animate .btn-menu-lines::before {
+        -webkit-transform-origin: rotate3d(0, 0, 2, 45deg);
+        -ms-transform-origin: rotate3d(0, 0, 2, 45deg);
+        transform-origin: rotate3d(0, 0, 2, 45deg);
+        transform-origin: 50% 50%;
+        top: 0;
+    }
+    .btn-menu .is-animate .btn-menu-lines::after {
+        -webkit-transform-origin: rotate3d(0, 0, 2, -45deg);
+        -ms-transform-origin: rotate3d(0, 0, 2, -45deg);
+        transform-origin: rotate3d(0, 0, 2, -45deg);
+        transform-origin: 50% 50%;
+        top: 0;
+    }
+
+    /* section */
+    .section-inner {
+        padding: 40px 10px 50px;
+    }
+
+    .recruit .section-inner {
+        padding: 40px 10px 50px;
+    }
+
+    /* card */
+    .card-warp {
+        display: block;
+
+    }
+
+    .card {
+        display: block;
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto 30px;
+
+    }
+
+    /* news */
+    .list-news>li {
+        display: block;
+        padding: 25px 10px;
+
+    }
+
+    .list-news>li>title {
+        padding-left: 0;
+    }
+
+    .list-news>li>span {
+        margin-bottom: 10px;
+    }
+
+    /* company */
+    .company {
+        height: auto;
+    }
+
+    .box-company {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    .company td {
+        padding: 5px 5px 5px 0;
+        width: 40%;
+
+    }
+
+    /* map */
+    .map {
+        position: static;
+        width: 100%;
+        height: 400px;
+
+    }
+
+    /* recruit */
+    .recruit-wrap::before,
+    .recruit-wrap::after {
+        display: none;
+
+    }
+
+    .recurit-inner {
+        padding: 0
+    }
+
+    .btn-01 {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:1040px) {
+
+    .recruit-wrap::before,
+    .recruit-wrap::after {
+        display: none;
+    }
 }
