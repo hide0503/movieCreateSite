@@ -649,3 +649,58 @@ footer small {
         display: none;
     }
 }
+
+/* main-visuaのアニメーション */
+.heading-wrapper{
+    text-align: center;
+
+}
+
+.mask_inner{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+h2::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 1;
+    width:100%;
+    height: 100%;
+    background: #000;
+    transform: translateX(-100%);
+}
+.mask_inner span{
+    animation: show .1s 1.5s forwards;
+    opacity: 0;
+}
+.is-animate::before{
+    animation:maskIn .5s 1s forwards cubic-bezier(.8,0,.5,1),
+    maskOut .5s 1.6s forwards cubic-bezier(.8,0,.5,1);
+}
+@keyframes maskIn{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes maskOut{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(101%);
+    }
+}
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
