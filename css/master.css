@@ -489,10 +489,14 @@ footer small {
 
     /* btn */
     .btn-menu {
-         display: block; /*button要素は元々インライン要素なのでblock要素に変更 */
-        position: fixed; /*fixedでスクロールしても動かないように設定*/
-        z-index: 2; /*重ねを上に*/
-        top: 5px; /*位置調整*/
+        display: block;
+        /*button要素は元々インライン要素なのでblock要素に変更 */
+        position: fixed;
+        /*fixedでスクロールしても動かないように設定*/
+        z-index: 2;
+        /*重ねを上に*/
+        top: 5px;
+        /*位置調整*/
         right: 5px;
         width: 40px;
         height: 40px;
@@ -501,16 +505,22 @@ footer small {
     }
 
     .btn-menu-lines {
-        position: absolute; /*fixedを基準に絶対位置への配置*/
+        position: absolute;
+        /*fixedを基準に絶対位置への配置*/
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        width: 20px;/*ラインの長さ指定*/
-        height: 2px; /*ラインの太さを指定*/
-        margin: auto; /*左右中央揃え*/
+        width: 20px;
+        /*ラインの長さ指定*/
+        height: 2px;
+        /*ラインの太さを指定*/
+        margin: auto;
+        /*左右中央揃え*/
         background: #fff;
-        -webkit-transition: .3s; /*変化量を指定*//*アニメーション前のプロパティに指定すること*/
+        -webkit-transition: .3s;
+        /*変化量を指定*/
+        /*アニメーション前のプロパティに指定すること*/
         transition: .3s;
 
     }
@@ -553,6 +563,7 @@ footer small {
         transform-origin: 50% 50%;
         top: 0;
     }
+
     .btn-menu .is-animate .btn-menu-lines::after {
         -webkit-transform-origin: rotate3d(0, 0, 2, -45deg);
         -ms-transform-origin: rotate3d(0, 0, 2, -45deg);
@@ -638,6 +649,7 @@ footer small {
     }
 
     .btn-01 {
+        display: block;
         margin: 0 auto;
     }
 }
@@ -650,57 +662,67 @@ footer small {
     }
 }
 
-/* main-visuaのアニメーション */
-.heading-wrapper{
+/* main-visualのアニメーション */
+.heading-wrapper {
     text-align: center;
 
 }
 
-.mask_inner{
+.mask_inner {
     display: inline-block;
     position: relative;
     overflow: hidden;
 }
-h2::before{
-    content:'';
+
+h2::before {
+    content: '';
     position: absolute;
     top: 0;
-    left:0;
+    left: -1px;
     z-index: 1;
-    width:100%;
+    width: 100%;
     height: 100%;
     background: #000;
     transform: translateX(-100%);
 }
-.mask_inner span{
-    animation: show .1s 1.5s forwards;
+
+
+.mask_inner .is-animate span {
+    animation: show .1s .5s forwards;
     opacity: 0;
 }
-.is-animate::before{
-    animation:maskIn .5s 1s forwards cubic-bezier(.8,0,.5,1),
-    maskOut .5s 1.6s forwards cubic-bezier(.8,0,.5,1);
+
+.is-animate::before {
+    animation: maskIn .5s 1s forwards cubic-bezier(.8, 0, .5, 1),
+        maskOut .5s 1.6s forwards cubic-bezier(.8, 0, .5, 1);
 }
-@keyframes maskIn{
-    from{
+
+@keyframes maskIn {
+    from {
         transform: translateX(-100%);
     }
-    to{
+
+    to {
         transform: translateX(0);
     }
 }
-@keyframes maskOut{
-    from{
+
+@keyframes maskOut {
+    from {
         transform: translateX(0);
     }
-    to{
+
+    to {
         transform: translateX(101%);
     }
 }
-@keyframes show{
-    from{
+
+@keyframes show {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
