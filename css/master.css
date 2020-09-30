@@ -231,6 +231,10 @@ nav {
     padding: 90px 10px 200px;
 
 }
+.heading-wrapper {
+    text-align: center;
+
+}
 
 .section-inner h2 {
     font-size: 60px;
@@ -518,10 +522,10 @@ footer small {
         margin: auto;
         /*左右中央揃え*/
         background: #fff;
-        -webkit-transition: .3s;
+        -webkit-transition: .2s;
         /*変化量を指定*/
         /*アニメーション前のプロパティに指定すること*/
-        transition: .3s;
+        transition: .2s;
 
     }
 
@@ -577,7 +581,7 @@ footer small {
         padding: 40px 10px 50px;
     }
 
-    .recruit .section-inner {
+    .recruit.section-inner {
         padding: 40px 10px 50px;
     }
 
@@ -645,7 +649,9 @@ footer small {
     }
 
     .recurit-inner {
-        padding: 0
+        padding: 0;
+        width: 100%;
+        
     }
 
     .btn-01 {
@@ -663,10 +669,7 @@ footer small {
 }
 
 /* main-visualのアニメーション */
-.heading-wrapper {
-    text-align: center;
 
-}
 
 .mask_inner {
     display: inline-block;
@@ -687,14 +690,14 @@ h2::before {
 }
 
 
-.mask_inner .is-animate span {
+.mask_inner.is-animate span {
     animation: show .1s .5s forwards;
     opacity: 0;
 }
 
 .is-animate::before {
-    animation: maskIn .5s 1s forwards cubic-bezier(.8, 0, .5, 1),
-        maskOut .5s 1.6s forwards cubic-bezier(.8, 0, .5, 1);
+    animation: maskIn .5s 0s forwards cubic-bezier(.8, 0, .5, 1),
+        maskOut .5s 1.0s forwards cubic-bezier(.8, 0, .5, 1);
 }
 
 @keyframes maskIn {
