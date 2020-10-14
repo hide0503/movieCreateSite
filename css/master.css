@@ -193,7 +193,7 @@ button {
     right: 0;
     margin: 0 auto;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     background-color: rgba(0, 0, 0, .5);
     padding: 10px;
 }
@@ -201,6 +201,7 @@ button {
 .navbar__wrap {
     display: flex;
     justify-content: center;
+
 }
 
 .navbar__wrap__title+.navbar__wrap__title {
@@ -208,7 +209,7 @@ button {
 
 }
 
-.navbar__wrap__title>a {
+.navbar__wrap__title a {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
@@ -256,6 +257,7 @@ button {
     text-align: center;
 
 }
+
 /*Service*/
 .service {
     background: url(../images/bg_service.jpg);
@@ -304,12 +306,6 @@ button {
     padding: 10px 15px;
 }
 
-
-
-
-
-
-
 /*news*/
 .news-list {
     max-width: 900px;
@@ -333,14 +329,6 @@ button {
     display: flex;
     border-top: 1px solid #e5e5e5;
 }
-
-.navbar__wrap__text:last-child {
-    border-bottom: 1px solid #e5e5e5;
-
-}
-
-
-
 
 /* company */
 .company {
@@ -382,7 +370,6 @@ button {
     top: 0;
 
 }
-
 
 /* Recruit */
 .recruit .section-inner {
@@ -451,7 +438,7 @@ button {
 
 }
 
-.btn-01 {
+.contact-btn {
     color: #fff;
     background: #333;
     display: block;
@@ -612,13 +599,14 @@ footer small {
     }
 
     .news-list__item__day {
-        color:#333;
+        color: #333;
         margin-bottom: 10px;
 
     }
+
     .news-list__item__text {
         padding-left: 0;
-    
+
     }
 
     /* company */
@@ -639,6 +627,7 @@ footer small {
         width: 40%;
 
     }
+
     .company__location {
         position: static;
         width: 100%;
@@ -659,7 +648,7 @@ footer small {
 
     }
 
-    .btn-01 {
+    .contact-btn {
         display: block;
         margin: 0 auto;
     }
@@ -692,7 +681,6 @@ h2::before {
     background: #000;
     transform: translateX(-100%);
 }
-
 
 .mask_inner.is-animate span {
     animation: show .1s .5s forwards;
@@ -733,3 +721,67 @@ h2::before {
         opacity: 1;
     }
 }
+
+/* ローダーアニメーション実装 */
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    background-color: #16122e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.spinner__wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.spinner__item {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+
+}
+.spinner__item--removeMargin{
+    margin-left: 0;
+
+}
+.spinner__item--animation{
+animation: sk-bouncedelay 1.4s infinite;
+
+}
+.bounce1{
+    animation-delay: -0.32s;
+
+}
+.bounce2{
+    animation-delay: -0.16s;
+
+}
+@keyframes sk-bouncedelay{
+    0%{
+        transform: scale(0);
+    }
+    40%{
+        transform: scale(1);
+
+    }
+    80%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+.loaded {
+   opacity: 0;
+   visibility: hidden;
+  }

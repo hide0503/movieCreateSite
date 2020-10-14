@@ -29,6 +29,16 @@
         </nav>
     </header>
     <main>
+
+        ローディングアニメーション実装
+        <div id="loading" >
+            <div class="spinner spinner__wrap">
+                <span class="spinner__item spinner__item--animation spinner__item--removeMargin bounce1"></span>
+                <span class="spinner__item spinner__item--animation bounce2"></span>
+                <span class="spinner__item spinner__item--animation"></span>
+            </div>
+        </div>
+
         <!-- main-visual -->
         <section class="main-visual">
             <video autoplay muted loop class="main-visual__video">
@@ -126,29 +136,29 @@
             <div class="section-inner">
                 <div class="company__box">
                     <div class="heading-wrapper">
-                    <h2 class="mask_inner"><span>Company</span></h2>
+                        <h2 class="mask_inner"><span>Company</span></h2>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>会社名</th>
+                                <td>株式会社MOVE CREATE</td>
+                            </tr>
+                            <tr>
+                                <th>取締役</th>
+                                <td>Lorem, ipsum.</td>
+                            </tr>
+                            <tr>
+                                <th>所在地</th>
+                                <td>&#12306 000-000-000</td>
+                            </tr>
+                            <tr>
+                                <th>資本金</th>
+                                <td>100万円</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>会社名</th>
-                            <td>株式会社MOVE CREATE</td>
-                        </tr>
-                        <tr>
-                            <th>取締役</th>
-                            <td>Lorem, ipsum.</td>
-                        </tr>
-                        <tr>
-                            <th>所在地</th>
-                            <td>&#12306 000-000-000</td>
-                        </tr>
-                        <tr>
-                            <th>資本金</th>
-                            <td>100万円</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
             </div>
             <iframe class="company__location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12964.14667621347!2d139.64361936565297!3d35.67609908157007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f253c753c6e3%3A0xcaf995137139e096!2z44Op44O744OU44OD44Kz44Op44O744K_44O844O044Kp44Op!5e0!3m2!1sja!2sjp!4v1600583873175!5m2!1sja!2sjp"
@@ -163,7 +173,8 @@
                 </div>
                 <div class="recruit__wrap">
                     <div class="recruit__inner">
-                        <p class="recurit__discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusantium doloribus
+                        <p class="recurit__discription">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Quibusdam accusantium doloribus
                             alias dolorum laudantium voluptate obcaecati ducimus minima totam voluptatibus!</p>
                         <h3>募集職種</h3>
                         <ul class="recruit__list">
