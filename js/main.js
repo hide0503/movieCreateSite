@@ -70,11 +70,29 @@ $(function () {
         });
 
     }());
+
 });
 
-window.onload = function() {
-    const spinner = document.getElementById('loading');
-   
-    // Add .loaded to .loading
-    spinner.classList.add('loaded');
+
+const time = new Date().getTime(); //ロードが終わった時間取得
+
+//全ての読み込みが完了したら実行
+$(window).on('load',function () {
+  const now = new Date().getTime(); //ロード時間を取得
+  if (now-time<=3000) { //3秒以下であれば、以下の処理を実行
+    setTimeout('stopload()',4000-(now-time));
+    return;
+  } else {
+    stopload();
   }
+});
+
+//10秒たったら強制的にロード画面を非表示
+$(function(){
+  setTimeout('stopload()',10000);
+});
+
+function stopload(){//関数定義
+    $("#loading").addClass("loaded");
+    $(".spinner__wrap").addClass("loaded");
+}
