@@ -93,6 +93,8 @@ $(function(){
 });
 
 function stopload(){//関数定義
-    $("#loading").addClass("loaded");
-    $(".spinner__wrap").addClass("loaded");
+    if(!$("#loading, .spinner__wrap").hasClass("loaded")){ //loadedクラスが付与されていない場合に実行
+        $("#loading").addClass("loaded");
+        $(".spinner__wrap").addClass("loaded");
+    }
 }
